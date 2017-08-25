@@ -8,3 +8,9 @@ A component itself can be viewed as an "hybrid" class that can call "pure" class
 ### Example:
 
 ![](./img/customers.png)
+
+Above, we have a customer class with differents fields. Once exported, we can use it in any of our components. Below, we exported it to the `sandbox component` you've already defined:
+
+
+![](./img/sandbox.png)
+

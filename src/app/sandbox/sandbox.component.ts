@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Customer} from '../Customer'; //./if it is in the same folder
+
 @Component({
     selector: 'sandbox',
     templateUrl: `./sandbox.component.html`,
