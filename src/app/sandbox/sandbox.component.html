@@ -9,3 +9,10 @@
         {{i}} {{person}}
     </li>
 </ul>
+
+<!-- loop thru object -->
+<ul>
+    <li *ngFor="let p of customers">
+        {{p.id}} {{p.name}} {{p.email}}
+    </li>
+</ul>
