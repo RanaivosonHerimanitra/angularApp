@@ -1,13 +1,9 @@
 import {Component} from '@angular/core';
+import {Customer} from '../Customer'; //./if it is in the same folder
 @Component({
     selector: 'sandbox',
-    template: `
-    <h1>{{name}} is {{age}} years old</h1>
-    <h2>my name is {{person.firstname}} {{person.lastname}}</h2>
-    <ul>
-    <li>{{showAge()}}</li>
-    </ul>
-    `
+    templateUrl: `./sandbox.component.html`,
+    styleUrls:['./sandbox.component.css']
 
 })
 
@@ -27,11 +23,34 @@ export class SandboxComponent {
     myvoid:void=undefined;
     myundef:undefined=undefined;
     mynull:null=null;
-    constructor()
-    {
+    customer:Customer;
+    //we can define an array of customer like in Java:
+    customers:Customer[];
+
+    constructor() {
         console.log("demarrage du serveur, on peut tout init par le constructeur...")
         this.hasChildren=false;
         this.hasbirthday();
+        this.customer=
+        {
+            id:"RANH15088800",
+            name:"HERIMANITRA",
+            email:"airmanitra@gmail.com"
+
+        } ;
+        //dont forget []
+        this.customers=[
+        {
+            id:"RANH15088800",
+            name:"HERIMANITRA",
+            email:"airmanitra@gmail.com"
+
+        } ,
+        {
+            id:"RASCED15089400",
+            name:"CEDRICK",
+            email:"rced@gmail.com"
+        } ]
     }
     hasbirthday(){
         this.age += 1;
