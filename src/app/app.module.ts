@@ -5,9 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { SandboxComponent } from './sandbox.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SandboxComponent
   ],
   imports: [
     BrowserModule,
