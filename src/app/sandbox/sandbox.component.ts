@@ -10,6 +10,7 @@ import {Customer} from '../Customer'; //./if it is in the same folder
 export class SandboxComponent {
     name:string= "Herimanitra";
     age: number= 35;
+    people=['ricky','john','glenn'];
     person = {
         firstname: 'steve',
         lastname: 'mayer'

@@ -4,3 +4,8 @@
 <ul>
     <li>{{showAge()}}</li>
 </ul>
+<ul>
+    <li *ngFor="let person of people ; let i=index">
+        {{i}} {{person}}
+    </li>
+</ul>
