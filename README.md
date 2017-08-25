@@ -7,4 +7,4 @@ A component itself can be viewed as an "hybrid" class that can call "pure" class
 
 ### Example:
 
-!](/media/herimanitra/DONNEES/WorkCanadaPreparation/angularApp/img/customers.png)
+![](./img/customers.png)
