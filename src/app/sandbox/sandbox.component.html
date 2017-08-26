@@ -1,4 +1,6 @@
-<h1 class="special">Hello world from the html file</h1>
+<h1>An h2 tag built with css declared in component:</h1>
+<h2 class="special">Hello world from the html file</h2>
+<h1>Variables declared in component:</h1>
 <h1>{{name}} is {{age}} years old</h1>
 <h2>my name is {{person.firstname}} {{person.lastname}}</h2>
 <ul>
@@ -13,6 +15,26 @@
 <!-- loop thru object -->
 <ul>
     <li *ngFor="let p of customers">
-        {{p.id}} {{p.name}} {{p.email}}
+        {{p.id}}--{{p.name}}--{{p.email}}
     </li>
 </ul>
+
+<h3>Let s look at *ngIf directive</h3>
+
+<p>Hello
+    <span *ngIf="showName()">{{name}}</span>
+    <span *ngIf="!showName()">World</span>
+</p>
+
+<h3>Using ternary operator</h3>
+
+<p>Hello {{showName() ? name:'world with ternary'}}</p>
+
+<h3>Let s look at *ngSwitch directive</h3>
+
+<div [ngSwitch]="greeting">
+    <div *ngSwitchCase="'1'">Hello world</div>
+    <div *ngSwitchCase="'2'">Hi there</div>
+    <div *ngSwitchCase="'3'">what s up</div>
+    <div *ngSwitchDefault>Hello</div>
+</div>

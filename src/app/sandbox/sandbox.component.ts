@@ -26,6 +26,7 @@ export class SandboxComponent {
     myundef:undefined=undefined;
     mynull:null=null;
     customer:Customer;
+    greeting:number=3;
     //we can define an array of customer like in Java:
     customers:Customer[];
 
@@ -33,6 +34,7 @@ export class SandboxComponent {
         console.log("demarrage du serveur, on peut tout init par le constructeur...")
         this.hasChildren=false;
         this.hasbirthday();
+       
         this.customer=
         {
             id:"RANH15088800",
@@ -56,6 +58,9 @@ export class SandboxComponent {
     }
     hasbirthday(){
         this.age += 1;
+    }
+    showName() {
+        return false;
     }
     showAge()
     {
