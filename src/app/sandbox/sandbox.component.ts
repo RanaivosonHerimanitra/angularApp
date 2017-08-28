@@ -10,8 +10,9 @@ import {Customer} from '../Customer'; //./if it is in the same folder
 
 export class SandboxComponent {
     currentClasses = {};
+    currentStyles={}
     //saveable:boolean=false;
-    isSpecial:boolean=false;
+    isSpecial:boolean=true;
     canSave:boolean=true;
     imageUrl:string='http://lorempixel.com/400/200';
     isUnchanged:boolean=true;    
@@ -40,7 +41,8 @@ export class SandboxComponent {
         console.log("demarrage du serveur, on peut tout init par le constructeur...")
         this.hasChildren=false;
         this.hasbirthday();
-       this.setCurrentClasses();
+        this.setCurrentStyles();
+        this.setCurrentClasses();
         this.customer=
         {
             id:"RANH15088800",
@@ -61,6 +63,12 @@ export class SandboxComponent {
             name:"CEDRICK",
             email:"rced@gmail.com"
         } ]
+    }
+    setCurrentStyles () {
+        this.currentStyles = {
+            'font-style': this.canSave ? 'italic' : 'normal',
+            'font-size': this.isSpecial ? '24px' : '12px'
+        }
     }
     setCurrentClasses()  {
         this.currentClasses={
