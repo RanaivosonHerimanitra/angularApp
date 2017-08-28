@@ -45,3 +45,12 @@
     <!-- third way to do it-->
     <img bind-src="imageUrl">
 </div>
+
+<h4>create post</h4>
+<p hidden="isUnchanged">
+    post has been changed, please save
+    <button disabled="isUnchanged"> Save</button>
+</p>
+<p>if <strong>isSpecial</strong> is true then, special class css will be applied</p>
+<h4 [class.special]="isSpecial">This class binding is special</h4>
+<h4 [ngClass]="currentClasses">This class is special and saveable</h4>

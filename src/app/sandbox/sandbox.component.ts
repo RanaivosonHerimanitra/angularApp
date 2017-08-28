@@ -9,6 +9,12 @@ import {Customer} from '../Customer'; //./if it is in the same folder
 })
 
 export class SandboxComponent {
+    currentClasses = {};
+    //saveable:boolean=false;
+    isSpecial:boolean=false;
+    canSave:boolean=true;
+    imageUrl:string='http://lorempixel.com/400/200';
+    isUnchanged:boolean=true;    
     name:string= "Herimanitra";
     age: number= 35;
     people=['ricky','john','glenn'];
@@ -29,13 +35,12 @@ export class SandboxComponent {
     greeting:number=3;
     //we can define an array of customer like in Java:
     customers:Customer[];
-    imageUrl='http://lorempixel.com/400/200';
-
+    
     constructor() {
         console.log("demarrage du serveur, on peut tout init par le constructeur...")
         this.hasChildren=false;
         this.hasbirthday();
-       
+       this.setCurrentClasses();
         this.customer=
         {
             id:"RANH15088800",
@@ -56,6 +61,12 @@ export class SandboxComponent {
             name:"CEDRICK",
             email:"rced@gmail.com"
         } ]
+    }
+    setCurrentClasses()  {
+        this.currentClasses={
+        saveable: this.canSave,
+        special: this.isSpecial
+    }   
     }
     hasbirthday(){
         this.age += 1;
