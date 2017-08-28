@@ -29,6 +29,7 @@ export class SandboxComponent {
     greeting:number=3;
     //we can define an array of customer like in Java:
     customers:Customer[];
+    imageUrl='http://lorempixel.com/400/200';
 
     constructor() {
         console.log("demarrage du serveur, on peut tout init par le constructeur...")

@@ -38,3 +38,10 @@
     <div *ngSwitchCase="'3'">what s up</div>
     <div *ngSwitchDefault>Hello</div>
 </div>
+<div>
+    <img src="{{ imageUrl }}">
+    <!-- another way to do it-->
+    <img [src]="imageUrl">
+    <!-- third way to do it-->
+    <img bind-src="imageUrl">
+</div>
