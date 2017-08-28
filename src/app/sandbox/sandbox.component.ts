@@ -9,6 +9,7 @@ import {Customer} from '../Customer'; //./if it is in the same folder
 })
 
 export class SandboxComponent {
+    birthday = new Date(1988,15,8);
     currentClasses = {};
     currentStyles={}
     //saveable:boolean=false;

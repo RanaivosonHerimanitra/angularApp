@@ -60,3 +60,11 @@
     font size depends on isSpecial
 </div>
 <div [ngStyle]="currentStyles">this div is conditionnaly saveable and special</div>
+
+<p>Using pipe to format text</p>
+<p>My birthday is {{birthday | date }}</p>
+<p>My birthday is {{birthday | date | uppercase }}</p>
+<p>My birthday is {{birthday | date:"MM-dd-yyyy" }}</p>
+<p>I was born in {{birthday | date:"yyyy" }}</p>
+<p>I love {{'cake' | uppercase }}</p>
+<p>I earn {{'500' | currency:"GBP":"1" }}</p>
