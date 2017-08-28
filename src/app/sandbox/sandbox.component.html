@@ -68,3 +68,35 @@
 <p>I was born in {{birthday | date:"yyyy" }}</p>
 <p>I love {{'cake' | uppercase }}</p>
 <p>I earn {{'500' | currency:"GBP":"1" }}</p>
+<h3>Event binding:</h3>
+<button (click)="fireEvent($event,'greeting')">click event</button>
+<button (mouseover)="fireEvent($event,'greeting')">Mouse over</button>
+<button (mousedown)="fireEvent($event,'greeting')">Mouse down</button>
+<button (mouseup)="fireEvent($event,'greeting')">Mouse up</button>
+<button (dblclick)="fireEvent($event,'greeting')">double click</button>
+<button (drag)="fireEvent($event,'greeting')">drag event</button>
+<button (dragover)="fireEvent($event,'greeting')">drag over event</button>
+
+<h3>change text below you with this button</h3>
+<button (click)="changeText()">Change magic</button>
+<p>{{text}}</p>
+<!-- forms in angular -->
+<div class="container">
+    <form (submit)="insertForm()">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" [(ngModel)]="name" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Age:</label>
+            <input type="number" [(ngModel)]="age" name="age" class="form-control">
+        </div>
+        <input value="Soumettre" type="submit" class="btn btn-success">
+
+    </form>
+    <p>Name: {{name}}</p>
+    <p>Age: {{age}}</p>
+    <ul class="list-group">
+        <li lass="list-group-item" *ngFor="let user of users">{{user}}</li>
+    </ul>
+</div>

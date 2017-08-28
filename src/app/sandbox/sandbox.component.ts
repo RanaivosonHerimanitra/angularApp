@@ -9,6 +9,8 @@ import {Customer} from '../Customer'; //./if it is in the same folder
 })
 
 export class SandboxComponent {
+    users = ['Jean','Eric'];
+    text:string="Hello unchanged";
     birthday = new Date(1988,15,8);
     currentClasses = {};
     currentStyles={}
@@ -64,6 +66,22 @@ export class SandboxComponent {
             name:"CEDRICK",
             email:"rced@gmail.com"
         } ]
+    }
+    insertForm() {
+        this.users.push(this.name);
+        this.name='';
+        //console.log(this.name);
+        //console.log("form submitted");
+    }
+    changeText() {
+        this.text="hELLO changed";
+    }
+    fireEvent(e,greeting)
+    {
+        alert(e.type);
+       // console.log("button clicked");
+        console.log(greeting);
+        
     }
     setCurrentStyles () {
         this.currentStyles = {
