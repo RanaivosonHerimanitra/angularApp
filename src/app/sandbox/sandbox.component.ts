@@ -9,6 +9,12 @@ import {Customer} from '../Customer'; //./if it is in the same folder
 })
 
 export class SandboxComponent {
+    user = {
+        name:'',
+        age:'',
+        phone:'',
+        email:''
+    }
     users = ['Jean','Eric'];
     text:string="Hello unchanged";
     birthday = new Date(1988,15,8);
@@ -67,9 +73,14 @@ export class SandboxComponent {
             email:"rced@gmail.com"
         } ]
     }
-    insertForm() {
-        this.users.push(this.name);
-        this.name='';
+    insertForm({value,valid}) {
+        if (valid) {
+            console.log(value)
+        } else {
+            console.log("formi is invalid")
+        }
+        //this.users.push(this.name);
+        //this.name='';
         //console.log(this.name);
         //console.log("form submitted");
     }
