@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Customer} from '../Customer'; //./if it is in the same folder
-
+import {MyservicesService} from './../services/myservices.service';
 @Component({
     selector: 'sandbox',
     templateUrl: `./sandbox.component.html`,
@@ -45,9 +45,10 @@ export class SandboxComponent {
     greeting:number=3;
     //we can define an array of customer like in Java:
     customers:Customer[];
-    
-    constructor() {
-        console.log("demarrage du serveur, on peut tout init par le constructeur...")
+    usersfromserv:string[];
+    constructor(public dataservice:MyservicesService) {
+        this.usersfromserv=this.dataservice.getUsers();
+        console.log(this.usersfromserv);
         this.hasChildren=false;
         this.hasbirthday();
         this.setCurrentStyles();

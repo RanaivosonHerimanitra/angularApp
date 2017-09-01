@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { SandboxComponent } from './sandbox/sandbox.component';
-
+import {MyservicesService} from './services/myservices.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,7 @@ import { SandboxComponent } from './sandbox/sandbox.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MyservicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
