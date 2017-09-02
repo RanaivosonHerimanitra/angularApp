@@ -126,3 +126,19 @@
         {{u}}
     </li>
 </ul>
+<div>Data fetched from a service (http) using observable:</div>
+<ul class="list-group">
+    <div class="well" *ngFor="let d of data">
+    <li class="list-group-item" >
+        Name: {{d.name}}
+    </li>
+    <li class="list-group-item" >
+            Email: {{d.email}}
+    </li>
+
+    <li class="list-group-item" >
+            Phone: {{d.phone}}
+    </li>
+    <hr>
+</div>
+</ul>

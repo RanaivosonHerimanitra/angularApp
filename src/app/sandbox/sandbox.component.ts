@@ -9,6 +9,7 @@ import {MyservicesService} from './../services/myservices.service';
 })
 
 export class SandboxComponent {
+    data:any[]=[];
     user = {
         name:'',
         age:'',
@@ -47,6 +48,14 @@ export class SandboxComponent {
     customers:Customer[];
     usersfromserv:string[];
     constructor(public dataservice:MyservicesService) {
+        //here is the observable:
+        this.dataservice.getUsersHttp().subscribe(u=>{
+            this.data=u;
+        });
+        //here is the observable:
+       // this.dataservice.getData().subscribe(data=>{
+         //   this.data.push(data);
+        //});
         this.usersfromserv=this.dataservice.getUsers();
         console.log(this.usersfromserv);
         this.hasChildren=false;
@@ -117,4 +126,5 @@ export class SandboxComponent {
     {
         return this.age;
     }
+    
 }
