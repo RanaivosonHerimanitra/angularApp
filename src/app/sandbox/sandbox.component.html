@@ -142,3 +142,34 @@
     <hr>
 </div>
 </ul>
+<h2>Form using http post module</h2>
+<form (submit)="onSubmit()">
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control" [(ngModel)] ="myuser.name" />
+    </div>
+    <div class="form-group">
+            <label>Email:</label>
+            <input type="text" name="email" class="form-control" [(ngModel)] ="myuser.email" />
+    </div>
+    <div class="form-group">
+            <label>Phone:</label>
+            <input type="text" name="phone" class="form-control" [(ngModel)] ="myuser.phone" />
+    </div>
+    <input type="submit" class="btn btn-success" value="Submit"/>
+</form>
+<ul class="list-group">
+        <div class="well" *ngFor="let x of myusers">
+        <li class="list-group-item" >
+            Name: {{x.name}}
+        </li>
+        <li class="list-group-item" >
+                Email: {{x.email}}
+        </li>
+    
+        <li class="list-group-item" >
+                Phone: {{x.phone}}
+        </li>
+        <hr>
+    </div>
+</ul>

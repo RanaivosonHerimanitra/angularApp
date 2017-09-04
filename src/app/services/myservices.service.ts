@@ -7,6 +7,12 @@ export class MyservicesService {
 
   data : Observable<Array<number>>;
   users: string[];
+  myuser = {
+    name:'',
+   
+    phone:'',
+    email:''
+}
 
   constructor(public http:Http) { 
     this.users=['Mark','John','shanon']
@@ -37,5 +43,10 @@ export class MyservicesService {
   }
   getUsers() {
     return this.users;
+  }
+  addUser(myuser) {
+    return this.http.post("http://jsonplaceholder.typicode.com/users",myuser)
+    .map(res=>res.json())
+    ;
   }
 }

@@ -16,6 +16,13 @@ export class SandboxComponent {
         phone:'',
         email:''
     }
+    myusers:any[]=[];
+    myuser = {
+        name:'',
+        phone:'',
+        email:''
+    };
+    
     users = ['Jean','Eric'];
     text:string="Hello unchanged";
     birthday = new Date(1988,15,8);
@@ -47,7 +54,9 @@ export class SandboxComponent {
     //we can define an array of customer like in Java:
     customers:Customer[];
     usersfromserv:string[];
+    
     constructor(public dataservice:MyservicesService) {
+       
         //here is the observable:
         this.dataservice.getUsersHttp().subscribe(u=>{
             this.data=u;
@@ -125,6 +134,14 @@ export class SandboxComponent {
     showAge()
     {
         return this.age;
+    }
+     //onSubmit function which calls a service
+     onSubmit() {
+        this.dataservice.addUser(this.myuser).subscribe(user=>{
+            console.log(user);
+            //like push
+            this.myusers.unshift(user);
+        });
     }
     
 }
