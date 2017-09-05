@@ -14,3 +14,12 @@ Above, we have a customer class with differents fields. Once exported, we can us
 
 ![](./img/sandbox.png)
 
+
+### Creation:
+
+Component creation is easy, just enter the following commands on your CLI:
+
+`$ ng g component componentName`
+
+
+`componentName` is automatically imported and added (`@NgModule`) into your  `app.module` ts file.
