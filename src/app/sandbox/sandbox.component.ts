@@ -32,6 +32,7 @@ export class SandboxComponent {
     currentStyles={}
     //saveable:boolean=false;
     isSpecial:boolean=true;
+    isEdit:boolean=false;
     canSave:boolean=true;
     imageUrl:string='http://lorempixel.com/400/200';
     isUnchanged:boolean=true;    
@@ -156,6 +157,11 @@ export class SandboxComponent {
 
             }
         });
+    }
+    onEdit(myuser) {
+        this.isEdit=true
+        this.myuser=myuser;
+
     }
     
 }
