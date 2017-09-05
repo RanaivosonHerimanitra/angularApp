@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {Customer} from '../Customer'; //./if it is in the same folder
 import {MyservicesService} from './../services/myservices.service';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
 @Component({
     selector: 'sandbox',
     templateUrl: `./sandbox.component.html`,
@@ -141,6 +143,18 @@ export class SandboxComponent {
             console.log(user);
             //like push
             this.myusers.unshift(user);
+        });
+    }
+    onDelete(id) {
+        console.log(id);
+        this.dataservice.deleteUser(id).subscribe(res=>{
+            //update UI by deleting user with id:
+            for (let i=0;i<this.data.length;i++) {
+                if (this.data[i].id==id) { //if match
+                    this.data.splice(i,1);
+                }
+
+            }
         });
     }
     
